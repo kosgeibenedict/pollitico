@@ -1,0 +1,44 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="/" class="active">Politico</a>
+  <div class="float-right">
+  <a href="/"></a>
+  {% if session.log %}
+   {% if session['username'] == 'admin' %}
+
+    <a href="/">Register Political Offices</a>
+  <a href="/login">Register Candidates</a>
+  <a href="/">{{ session['username'] }}</a>
+  <a href="/logout">Logout</a>
+
+  {% else %}
+    <a href="/all_candidates">All Candidates</a>
+    <a href="/vote">vote</a>
+    <a href="/results">Election Results</a>
+    <a href="/">{{ session['username'] }}</a>
+    <a href="/logout">Logout</a>
+  {% endif %}
+  {% else %}
+  <a href="/">Signup</a>
+  <a href="/login">Login</a>
+  {% endif %}
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="toggler"></div>
+        <div class="toggler"></div>
+        <div class="toggler"></div>
+  </a>
+  </div>
+  
+</div>
+{% include 'includes/_message.html' %}
+{% block body %}
+
+{% endblock body %}
+
+<script src="{{ url_for('static', filename='styles.js') }}"></script>
+</body>
+</html>

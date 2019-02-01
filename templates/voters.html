@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="voterss">
+        <h1>Welcome to voters Dashboad</div>
+        <div class="dashboard-container">
+            <div class="container-content">
+                <h2>All Political Parties</h2>
+                <p>Republican Party<small>  RP</small></p>
+                <hr>
+                <p>Democartic Party  <small>    DP</small></p>
+                <hr>
+                <p>Green Labour Party  <small>  GLP</small></p>
+                <hr>
+            </div>
+            <div class="container-content">
+                <h2>Politicians Running for Office</h2>
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                        <th>Party[abbrev]</th>
+                        <th>Office</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Benedic Kosgei</td>
+                            <td>RP</td>
+                            <td>Senate</td>
+                        </tr>
+                        <tr>
+                            <td>Bernad Mbosso</td>
+                            <td>DP</td>
+                            <td>Senate</td>
+                        </tr>
+                        <tr>
+                            <td>Selina Maina</td>
+                            <td>GLP</td>
+                            <td>Women Rep.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container-content">
+                <h2>Vote Here!</h2>
+                <div class="cast">
+                <button class="button-primary"><a href="/vote">Cast Your Vote</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
